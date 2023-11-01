@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery AJAX REST API</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <h2>jquery GET and POST methods</h2>
+    <button id="get">GET</button>
+    <br>
+    <div id="get-response"></div>
+    <br>
+    <button id="post">POST</button>
+    <br>
+    <div id="post-response"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#get").click(function () {
+            $.get({
+                url: "https://jsonplaceholder.typicode.com/users",
+                success: function (result) {
+                    $("#get-response").append(JSON.stringify(result));
+                }
+            });
+        });
+
+        $("#post").click(function () {
+            $.post({
+                url: "https://jsonplaceholder.typicode.com/users",
+                data: {
+                    "id": 11,
+                    "name": "Tutorialspoint",
+                    "username": "Test1",
+                    "email": "abc@gmail.com",
+                    "address": {
+                        "street": "qa street",
+                        "suite": "Apt 123",
+                        "city": "Kochi",
+                        "zipcode": "49085",
+                        "geo": {
+                            "lat": "-3.3155",
+                            "lng": "94.156"
+                        }
+                    },
+                    "phone": "99599125",
+                    "website": "Tutorialspoint.com",
+                    "company": {
+                        "name": "Tutorialspoint",
+                        "catchPhrase": "Simple Easy Learning",
+                        "bs": "Postman Tutorial"
+                    }
+                },
+                success: function (result) {
+                    $("#post-response").append(JSON.stringify(result));
+                }
+            });
+        });
+    });
+</script>
+
+</html>
