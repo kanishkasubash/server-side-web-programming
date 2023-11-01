@@ -12,25 +12,13 @@ app.listen(PORT, () => {
 });
 
 /* HTTP GET Method*/
-app.get("/", (req, res) => {
+app.get("/api/products", (req, res, next) => {
     // Code to retrive data
-    res.send("Hello World!");
+    
 });
 
 /* HTTP POST Method*/
-app.post("/", (req, res) => {
+app.post("/api/products", (req, res, next) => {
     // Code to insert data
-    res.send("Posting Some Data");
-});
-
-/* HTTP PUT Method*/
-app.put("/", (req, res) => {
-    // Code to update data
-    res.send("Updating Some Data");
-});
-
-/* HTTP DELETE Method*/
-app.delete("/", (req, res) => {
-    // Code to delete data
-    res.send("Deleting Some Data");
+    
 });
