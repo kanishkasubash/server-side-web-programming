@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node mail.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  }
+}
